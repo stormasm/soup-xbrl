@@ -145,10 +145,12 @@ class XBRLParser(object):
         context_tags = xbrl.find_all(name=re.compile(doc_root + "context",
                                      re.IGNORECASE | re.MULTILINE))
 
+        print("number of context_tags =",len(context_tags))
+
         try:
             for context_tag in context_tags:
 
-                print(context_tag)
+                #print("\n",context_tag,"\n")
 
                 # we don't want any segments
                 if context_tag.find(doc_root + "entity") is None:
