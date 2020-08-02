@@ -202,15 +202,6 @@ class XBRLParser(object):
         except IndexError:
             raise XBRLParserException('problem getting contexts')
 
-
-
-
-
-
-
-
-
-
         liabilities_and_equity = \
             xbrl.find_all(name=re.compile("(us-gaap:)[^s]*(liabilitiesand)",
                           re.IGNORECASE | re.MULTILINE))
@@ -225,21 +216,26 @@ class XBRLParser(object):
             self.data_processing(liabilities, xbrl, ignore_errors,
                 logger, context_ids)
 
+        return gaap_obj
+
+    @classmethod
+    def process_gaap_tags(self,
+                  xbrl,
+                  doc_date="",
+                  context="current",
+                  ignore_errors=0):
+        """
+        Parse GAAP from our XBRL soup and return a GAAP object.
+        """
+
         us_gaap_tags = \
             xbrl.find_all(name=re.compile("(us-gaap:)[^s]*",
                           re.IGNORECASE | re.MULTILINE))
 
         print("number of us_gaap_tags =",len(us_gaap_tags))
 
-
-
         for gaap_tag in us_gaap_tags:
             print("\n",gaap_tag,"\n")
-
-
-
-
-        return gaap_obj
 
     @staticmethod
     def trim_decimals(s, precision=-3):
