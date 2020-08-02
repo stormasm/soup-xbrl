@@ -1,5 +1,5 @@
 import os
-from pv4xa import XBRLParser, GAAPSerializer
+from pv4xb import XBRLParser, GAAPSerializer
 
 def parse(file):
     print("\nData for ",file)
