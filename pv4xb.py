@@ -147,26 +147,3 @@ class XBRLPreprocessedFile(XBRLFile):
 class XBRL(object):
     def __str__(self):
         return ""
-
-
-# Base GAAP object
-class GAAP(object):
-    def __init__(self,
-                 liabilities_and_equity=0.0,
-                 liabilities=0.0):
-
-        self.liabilities_and_equity = liabilities_and_equity
-        self.liabilities = liabilities
-
-class GAAPSerializer(Schema):
-    liabilities_and_equity = fields.Number()
-    liabilities = fields.Number()
-
-# Base Custom object
-class Custom(object):
-
-    def __init__(self):
-        return None
-
-    def __call__(self):
-        return self.__dict__.items()
