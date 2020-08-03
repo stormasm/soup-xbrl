@@ -2,10 +2,7 @@
 # encoding: utf-8
 
 import re
-from marshmallow import Schema, fields
-import datetime
 import collections
-import six
 import logging
 
 try:
