@@ -96,10 +96,10 @@ class XBRLParser(object):
             xbrl.find_all(name=re.compile("(us-gaap:)[^s]*",
                           re.IGNORECASE | re.MULTILINE))
 
-        print("number of us_gaap_tags =",len(us_gaap_tags))
-
         for gaap_tag in us_gaap_tags:
             print("\n",gaap_tag,"\n")
+
+        print("number of us_gaap_tags =",len(us_gaap_tags))
 
 # Preprocessing to fix broken XML
 # TODO - Run tests to see if other XML processing errors can occur
