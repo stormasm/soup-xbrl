@@ -47,6 +47,18 @@ class XBRLParser(object):
     def __init__(self, precision=0):
         self.precision = precision
 
+    @staticmethod
+    def check_textblock(tagname):
+        """
+        check and see if the tag name contains textblock
+        and if it does contain textblock return true
+        """
+        x = re.search("textblock$", tagname)
+        if x == None:
+            return False
+        return True
+
+
     @classmethod
     def parse(self, file_handle):
         """
@@ -98,6 +110,9 @@ class XBRLParser(object):
 
         for gaap_tag in us_gaap_tags:
             name = gaap_tag.name
+            bool = XBRLParser().check_textblock(name)
+            if bool:
+                return
             # value is a python list
             value = gaap_tag.contents
             if len(value) == 1:
