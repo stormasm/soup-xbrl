@@ -97,7 +97,16 @@ class XBRLParser(object):
                           re.IGNORECASE | re.MULTILINE))
 
         for gaap_tag in us_gaap_tags:
-            print("\n",gaap_tag.name,"\n")
+            name = gaap_tag.name
+            list = gaap_tag.contents
+            # value is a python list
+            # value = gaap_tag.contents[0]
+            # print(len(list))
+            if len(list) == 1:
+                print(name,list[0])
+
+#            if len(value) > 0:
+#                print("\n",name,value,"\n")
 
         print("number of us_gaap_tags =",len(us_gaap_tags))
 
