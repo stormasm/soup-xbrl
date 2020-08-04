@@ -25,7 +25,8 @@ def parse(file):
 
 if __name__ == "__main__":
     path = os.environ['BMTOP']
-    path = path + '/equity-data/edgar'
+    # path = path + '/equity-data/edgar'
+    path = path + '/tmp/edgar'
     files = getfiles(path)
     for file in files:
         parse(file)
