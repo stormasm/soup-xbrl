@@ -5,7 +5,9 @@ def parse(file):
     print("\nData for ",file)
     xbrl_parser = XBRLParser()
     xbrl = xbrl_parser.parse(open(file))
-    xbrl_parser.process_gaap_tags(xbrl, doc_date="20191231")
+    #xbrl_parser.process_gaap_tags(xbrl, doc_date="20191231")
+    xbrl_parser.process_context_tags(xbrl, doc_date="20191231")
+
 
 if __name__ == "__main__":
 

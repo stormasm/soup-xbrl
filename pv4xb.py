@@ -95,6 +95,30 @@ class XBRLParser(object):
         return xbrl
 
     @classmethod
+    def process_context_tags(self,
+                  xbrl,
+                  doc_date="",
+                  context="current",
+                  ignore_errors=0):
+        """
+        Parse context tags from our XBRL soup.
+        """
+
+        doc_root = ""
+
+        # we might need to attach the document root
+        if len(self.xbrl_base) > 1:
+            doc_root = self.xbrl_base
+
+        context_tags = xbrl.find_all(name=re.compile(doc_root + "context",
+                                     re.IGNORECASE | re.MULTILINE))
+
+        for context_tag in context_tags:
+            print('\n',context_tag,'\n')
+
+        print("number of context tags =",len(context_tags))
+
+    @classmethod
     def process_gaap_tags(self,
                   xbrl,
                   doc_date="",
