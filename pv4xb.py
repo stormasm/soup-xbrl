@@ -114,8 +114,12 @@ class XBRLParser(object):
                                      re.IGNORECASE | re.MULTILINE))
 
         for context_tag in context_tags:
-            print('\n',context_tag,'\n')
+            print('xxxxxxxxxxxxxx')
+            # print('\n',context_tag,'\n')
             print('\n',context_tag['id'],'\n')
+            print('xxxxxxxxxxxxxx')
+            for child in context_tag.descendants:
+                print(child)
 
         print("number of context tags =",len(context_tags))
 
