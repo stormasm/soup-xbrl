@@ -115,6 +115,7 @@ class XBRLParser(object):
 
         for context_tag in context_tags:
             print('\n',context_tag,'\n')
+            print('\n',context_tag['id'],'\n')
 
         print("number of context tags =",len(context_tags))
 
