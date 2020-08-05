@@ -1,6 +1,6 @@
 import os
 import re
-from pvx import XBRLParser, GAAPSerializer, DEISerializer
+from pvx0 import XBRLParser, GAAPSerializer, DEISerializer
 
 def getfiles(mypath):
     files = set()
@@ -33,9 +33,16 @@ def parse(file):
     print(result)
 
 if __name__ == "__main__":
+
+    f1 = '/ubnt-20200331_htm.xml'
+    f2 = '/ubnt-20191231_htm.xml'
+
     path = os.environ['BMTOP']
-    # path = path + '/equity-data/edgar'
-    path = path + '/tmp/edgar'
-    files = getfiles(path)
-    for file in files:
-        parse(file)
+    path = path + '/equity-data/edgar'
+    #path = path + '/tmp/edgar'
+
+#   files = getfiles(path)
+#   for path in files:
+#       parse(path)
+    path = path + f2
+    parse(path)
