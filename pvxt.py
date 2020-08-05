@@ -1,6 +1,6 @@
 import os
 import re
-from pv2x import XBRLParser, GAAPSerializer, DEISerializer
+from pvx import XBRLParser, GAAPSerializer, DEISerializer
 
 def getfiles(mypath):
     files = set()
