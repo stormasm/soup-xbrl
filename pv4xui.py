@@ -1,5 +1,13 @@
 import os
+import re
 from pv4xa import XBRLParser, GAAPSerializer
+
+def getdate_from_filename(input):
+    p = re.compile('(-)[0-9]*(_)')
+    q = p.search(input)
+    x = q.group()
+    x = x[1:9]
+    return(x)
 
 def parse(file):
     print("\nData for ",file)
@@ -10,7 +18,9 @@ def parse(file):
 
 #   I want this to work so I do not need to know the date for every filing...
 #   A blank doc_date should get the current date...
-    gaap_obj = xbrl_parser.parseGAAP(xbrl, doc_date="20191231")
+
+    doc_date = getdate_from_filename(file)
+    gaap_obj = xbrl_parser.parseGAAP(xbrl, doc_date=doc_date)
 
     serializer = GAAPSerializer()
     result = serializer.dump(gaap_obj)
@@ -23,5 +33,5 @@ if __name__ == "__main__":
 
     path = os.environ['BMTOP']
     path = path + '/equity-data/edgar/'
-    path = path + f2
+    path = path + f1
     parse(path)

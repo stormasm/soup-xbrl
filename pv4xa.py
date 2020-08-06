@@ -272,6 +272,11 @@ class XBRLParser(object):
             if len(elements) > 0 and XBRLParser().is_number(elements[0].text):
                     return elements[0].text
 
+
+        ### Debug, show the context ids
+        for context_id in context_ids:
+            print(context_id)
+
         try:
 
             # Extract the correct values by context
