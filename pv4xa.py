@@ -216,6 +216,14 @@ class XBRLParser(object):
             self.data_processing(liabilities, xbrl, ignore_errors,
                 logger, context_ids)
 
+        cash_and_cashequivalents = \
+            xbrl.find_all(name=re.compile("(us-gaap:)[^s]*(cashandcashequivalentsatcarryingvalue)",
+                          re.IGNORECASE | re.MULTILINE))
+        gaap_obj.cash_and_cashequivalents = \
+            self.data_processing(cash_and_cashequivalents, xbrl, ignore_errors,
+                logger, context_ids)
+
+
         return gaap_obj
 
     @staticmethod
@@ -360,14 +368,17 @@ class XBRL(object):
 class GAAP(object):
     def __init__(self,
                  liabilities_and_equity=0.0,
-                 liabilities=0.0):
+                 liabilities=0.0,
+                 cash_and_cashequivalents=0.0):
 
         self.liabilities_and_equity = liabilities_and_equity
         self.liabilities = liabilities
+        self.cash_and_cashequivalents = cash_and_cashequivalents
 
 class GAAPSerializer(Schema):
     liabilities_and_equity = fields.Number()
     liabilities = fields.Number()
+    cash_and_cashequivalents = fields.Number()
 
 # Base Custom object
 class Custom(object):

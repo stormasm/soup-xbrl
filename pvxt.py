@@ -44,5 +44,5 @@ if __name__ == "__main__":
 #   files = getfiles(path)
 #   for path in files:
 #       parse(path)
-    path = path + f2
+    path = path + f1
     parse(path)
