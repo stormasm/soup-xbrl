@@ -280,10 +280,15 @@ class XBRLParser(object):
             if len(elements) > 0 and XBRLParser().is_number(elements[0].text):
                     return elements[0].text
 
-
-        ### Debug, show the context ids
-        for context_id in context_ids:
-            print(context_id)
+        ### So this took me awhile to figure out so I will document here:
+        ### elements is a soup class called ResultSet which is a Python list
+        ### elements[0] is a <class 'bs4.element.Tag'>
+        ### elements[0].name is the tag name
+        ### print(type(elements[0]))
+        ### print(elements[0].name)
+        ### show the context ids
+        ### for context_id in context_ids:
+        ###     print(context_id)
 
         try:
 
