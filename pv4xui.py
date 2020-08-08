@@ -1,6 +1,6 @@
 import os
 import re
-from pv4xa import XBRLParser, GAAPSerializer
+from pv4xa1 import XBRLParser, GAAPSerializer
 
 def getdate_from_filename(input):
     p = re.compile('(-)[0-9]*(_)')
