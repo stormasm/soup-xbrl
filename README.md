@@ -1,6 +1,24 @@
 
 ### An explanation of the evolution of the different directories
 
+## pc
+
+Given a set of context ref's show what tags are in that group...
+
+We will start out with the context ref that is the default set
+of context ref's from the code in the pv directory.
+
+Be able to figure out what context ref's you want, how to generate
+them generically across a set of different companies.
+
+And showing the basic concepts of context refs matching up with
+the 10q's and 10k's.
+
+Go out and get all of the context refs and then show what tags
+are in each one...
+
+Go out and get all of the tags and then show the associated context refs.
+
 ## pv
 
 So pv is the original directory and is historically based on
