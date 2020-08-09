@@ -18,6 +18,12 @@ if 'OrderedDict' in dir(collections):
 else:
     import ordereddict as odict
 
+def get_set_from_list(list):
+    set_of_elements = set()
+    set_of_elements.clear()
+    for item in list:
+        set_of_elements.add(item)
+    return(set_of_elements)
 
 def soup_maker(fh):
     """ Takes a file handler returns BeautifulSoup"""
@@ -704,6 +710,21 @@ class XBRLParser(object):
         if options['no_context'] == True:
             if len(elements) > 0 and XBRLParser().is_number(elements[0].text):
                     return elements[0].text
+
+        ### So this took me awhile to figure out so I will document here:
+        ### elements is a soup class called ResultSet which is a Python list
+        ### elements[0] is a <class 'bs4.element.Tag'>
+        ### elements[0].name is the tag name
+        ### print(type(elements[0]))
+        if(len(elements) > 1 ):
+            print(elements[0].name)
+            ### show the context ids
+            ### print(type(context_ids))
+            ### Pass in a list and get back a Python set
+            context_ids_set = get_set_from_list(context_ids)
+            # print(len(context_ids_set))
+            for context_id in context_ids_set:
+                print(context_id)
 
         try:
 
