@@ -1,4 +1,33 @@
 
+There are 2 obvious core ideas in Edgar xbrl files...
+
+* contextRefs
+* us-gaap: tags
+
+```
+us-gaap:EarningsPerShareBasic
+```
+
+So the Edgar xbrl files are very uniform...
+The above tag is located in 8 different places in a 10Q file.
+Each one of the tags has a
+* contextRef
+* a unique ID
+* a value
+
+So contextRef processing is critical in understanding.
+If you have contextRef's down then you can easily select what tags you are seeking out.
+
+Here are the things we are going to need...
+
+Be able to understand the time scope of a contextRef.
+
+Depending on the QTR you are looking at the way you grab and understand
+the time data changes slightly.  So you have to be able to automagically
+figure this out and grab data accordingly.
+
+I may have to have a preprocessor that knows ahead of time for a set of companies when their fiscal year ends...   This is what may guide in the end the exact automatic processing of 10q's and 10k's
+
 ### An explanation of the evolution of the different directories
 
 ## pc
