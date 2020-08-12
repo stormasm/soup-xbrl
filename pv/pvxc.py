@@ -151,6 +151,7 @@ class XBRLParser(object):
         cr.refs = context_tags
         cr.format(context_tags)
 
+        print("\n")
         print("number of context_tags =",len(context_tags))
 
         try:

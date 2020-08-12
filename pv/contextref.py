@@ -5,5 +5,7 @@ class ContextRef(object):
 
     @classmethod
     def format(self,refs):
-        for ref in refs:
-            print("\n",ref,"\n")
+        for idx,ref in enumerate(refs):
+            print("\n")
+            print(idx,"\n")
+            print(ref)
