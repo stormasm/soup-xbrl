@@ -19,10 +19,9 @@ class ContextRef(object):
         for idx,ref in enumerate(refs):
             print("\n")
             print(idx,"\n")
+            print(ref['id'])
             self.processtag_period(ref)
             #print(ref)
-            #print(ref.period)
-            #print(ref.period.startdate)
 
     @classmethod
     def getContextTags(self,xbrl):
