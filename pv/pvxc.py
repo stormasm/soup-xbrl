@@ -150,13 +150,13 @@ class XBRLParser(object):
         cr = ContextRef(xbrl)
         cr.xbrl = xbrl
         cr.format(context_tags)
-        my_context_tags = cr.getContextTags(xbrl)
-        print("\n\n\n Part II")
-        cr.format(my_context_tags)
+        #my_context_tags = cr.getContextTags(xbrl)
+        #print("\n\n\n Part II")
+        #cr.format(my_context_tags)
 
         print("\n")
         print("number of context_tags =",len(context_tags))
-        print("number of context_tags =",len(my_context_tags))
+        #print("number of context_tags =",len(my_context_tags))
 
         try:
             for context_tag in context_tags:

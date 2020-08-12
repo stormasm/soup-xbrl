@@ -6,11 +6,23 @@ class ContextRef(object):
         self.xbrl = xbrl
 
     @classmethod
+    def processtag_period(self,tag):
+        #print(tag.period)
+        if(tag.period.startdate) == None:
+            print(tag.period.instant)
+        else:
+            print(tag.period.startdate)
+            print(tag.period.enddate)
+
+    @classmethod
     def format(self,refs):
         for idx,ref in enumerate(refs):
             print("\n")
             print(idx,"\n")
-            print(ref)
+            self.processtag_period(ref)
+            #print(ref)
+            #print(ref.period)
+            #print(ref.period.startdate)
 
     @classmethod
     def getContextTags(self,xbrl):
