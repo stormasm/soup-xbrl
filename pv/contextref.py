@@ -9,10 +9,10 @@ class ContextRef(object):
     def processtag_period(self,tag):
         #print(tag.period)
         if(tag.period.startdate) == None:
-            print(tag.period.instant)
+            print(tag.period.instant.string)
         else:
-            print(tag.period.startdate)
-            print(tag.period.enddate)
+            print(tag.period.startdate.string)
+            print(tag.period.enddate.string)
 
     @classmethod
     def format(self,refs):
