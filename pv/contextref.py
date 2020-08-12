@@ -1,4 +1,5 @@
 import re
+from validate import ValidDate
 
 class ContextRef(object):
 
@@ -7,12 +8,16 @@ class ContextRef(object):
 
     @classmethod
     def processtag_period(self,tag):
+        vd = ValidDate()
         #print(tag.period)
         if(tag.period.startdate) == None:
-            print(tag.period.instant.string)
+            d1 = tag.period.instant.string
+            vd.remove_unwanted_chars(d1)
         else:
-            print(tag.period.startdate.string)
-            print(tag.period.enddate.string)
+            d2 = tag.period.startdate.string
+            d3 = tag.period.enddate.string
+            vd.remove_unwanted_chars(d2)
+            vd.remove_unwanted_chars(d3)
 
     @classmethod
     def format(self,refs):
