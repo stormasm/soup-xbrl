@@ -151,6 +151,8 @@ class XBRLParser(object):
         cr.xbrl = xbrl
         cr.format(context_tags)
         my_context_tags = cr.getContextTags(xbrl)
+        print("\n\n\n Part II")
+        cr.format(my_context_tags)
 
         print("\n")
         print("number of context_tags =",len(context_tags))
