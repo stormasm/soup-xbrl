@@ -12,12 +12,15 @@ class ContextRef(object):
         #print(tag.period)
         if(tag.period.startdate) == None:
             d1 = tag.period.instant.string
-            vd.remove_unwanted_chars(d1)
+            result = vd.remove_unwanted_chars(d1)
+            print(result)
         else:
             d2 = tag.period.startdate.string
             d3 = tag.period.enddate.string
-            vd.remove_unwanted_chars(d2)
-            vd.remove_unwanted_chars(d3)
+            result = vd.remove_unwanted_chars(d2)
+            print(result)
+            result = vd.remove_unwanted_chars(d3)
+            print(result)
 
     @classmethod
     def format(self,refs):
