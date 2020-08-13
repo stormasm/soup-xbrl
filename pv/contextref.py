@@ -8,7 +8,11 @@ class ContextRef(object):
 
     @classmethod
     def processtag_segment(self,tag):
-        print(tag.entity.segment)
+        segment = tag.entity.segment
+        #print(type(segment))
+        if segment != None:
+            for entity in segment.children:
+                print(type(entity))
 
     @classmethod
     def processtag_period(self,tag):
