@@ -7,6 +7,10 @@ class ContextRef(object):
         self.xbrl = xbrl
 
     @classmethod
+    def processtag_segment(self,tag):
+        print(tag.entity.segment)
+
+    @classmethod
     def processtag_period(self,tag):
         vd = ValidDate()
         #print(tag.period)
@@ -28,7 +32,8 @@ class ContextRef(object):
             print("\n")
             print(idx,"\n")
             print(ref['id'])
-            self.processtag_period(ref)
+            #self.processtag_period(ref)
+            self.processtag_segment(ref)
             #print(ref)
 
     @classmethod
