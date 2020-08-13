@@ -23,7 +23,7 @@ class ContextRef(object):
             print(result)
 
     @classmethod
-    def format(self,refs):
+    def process(self,refs):
         for idx,ref in enumerate(refs):
             print("\n")
             print(idx,"\n")

@@ -149,7 +149,7 @@ class XBRLParser(object):
 
         cr = ContextRef(xbrl)
         cr.xbrl = xbrl
-        cr.format(context_tags)
+        cr.process(context_tags)
         #my_context_tags = cr.getContextTags(xbrl)
         #print("\n\n\n Part II")
         #cr.format(my_context_tags)
