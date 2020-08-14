@@ -9,19 +9,13 @@ class ContextRef(object):
     @classmethod
     def processtag_segment(self,tag):
         segment = tag.entity.segment
-        #print(type(segment))
         if segment != None:
             for entity in segment.children:
-                #print('1111111111111111')
-                #print(entity)
-                #print('2222222222222222')
                 mytype = type(entity).__name__
                 if mytype == 'Tag':
-                    for mychild in entity.children:
-                        print('333333333')     
+                    for child in entity.children:
                         print(entity['dimension'])
-                        print(mychild)
-                        print('444444444')
+                        print(child)
 
     @classmethod
     def processtag_period(self,tag):
@@ -45,9 +39,8 @@ class ContextRef(object):
             print("\n")
             print(idx,"\n")
             print(ref['id'])
-            #self.processtag_period(ref)
+            self.processtag_period(ref)
             self.processtag_segment(ref)
-            #print(ref)
 
     @classmethod
     def getContextTags(self,xbrl):
