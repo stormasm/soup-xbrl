@@ -12,7 +12,16 @@ class ContextRef(object):
         #print(type(segment))
         if segment != None:
             for entity in segment.children:
-                print(type(entity))
+                #print('1111111111111111')
+                #print(entity)
+                #print('2222222222222222')
+                mytype = type(entity).__name__
+                if mytype == 'Tag':
+                    for mychild in entity.children:
+                        print('333333333')     
+                        print(entity['dimension'])
+                        print(mychild)
+                        print('444444444')
 
     @classmethod
     def processtag_period(self,tag):
