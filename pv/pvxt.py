@@ -34,11 +34,11 @@ def parse(file):
 
 if __name__ == "__main__":
 
-    f1 = '/ubnt-20200331_htm.xml'
+    f1 = '/ubnt-20201231_htm.xml'
     f2 = '/ubnt-20191231_htm.xml'
 
     path = os.environ['BMTOP']
-    path = path + '/equity-data/edgar'
+    path = path + '/edgar-data/ubnt'
     #path = path + '/tmp/edgar'
 
 #   files = getfiles(path)
