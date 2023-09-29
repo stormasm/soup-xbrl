@@ -21,8 +21,9 @@ if __name__ == "__main__":
 
     f1 = 'ubnt-20200331_htm.xml'
     f2 = 'ubnt-20191231_htm.xml'
+    f3 = 'ubnt-20230331_htm.xml'
 
     path = os.environ['BMTOP']
-    path = path + '/equity-data/edgar/'
-    path = path + f1
+    path = path + '/edgar-data/ubnt/'
+    path = path + f3
     parse(path)
